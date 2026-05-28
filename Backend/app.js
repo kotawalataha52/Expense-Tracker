@@ -17,5 +17,9 @@ import userRouter from "./routes/auth.js";
 
 app.use("/api/v1/users",userRouter);
 
+import categoryRouter from "./routes/category.js";
+
+app.use("/api/v1/categories",categoryRouter);
+
 
 export default app;
