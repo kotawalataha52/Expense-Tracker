@@ -5,7 +5,8 @@ import { Category } from './Category.model.js';
 const transactionSchema = new mongoose.Schema({
     amount:{
         type:Number,
-        required:true
+        required:true,
+        min:0
     },
     type:{
         type:String,
@@ -14,7 +15,8 @@ const transactionSchema = new mongoose.Schema({
     },
     category:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Category"
+        ref:"Category",
+        required:true
     },
     note :{
         type:String

@@ -21,5 +21,8 @@ import categoryRouter from "./routes/category.js";
 
 app.use("/api/v1/categories",categoryRouter);
 
+import transactionRouter from "./routes/transaction.js";
+
+app.use("/api/v1/transactions",transactionRouter);
 
 export default app;
