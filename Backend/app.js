@@ -25,4 +25,8 @@ import transactionRouter from "./routes/transaction.js";
 
 app.use("/api/v1/transactions",transactionRouter);
 
+import summaryRouter from "./routes/summary.js";
+
+app.use("/api/v1/summary",summaryRouter);
+
 export default app;
