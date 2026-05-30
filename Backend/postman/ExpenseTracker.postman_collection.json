@@ -1,0 +1,460 @@
+{
+  "info": {
+    "_postman_id": "b7fd09e8-4c6f-4f99-a3c8-33dcf22c8030",
+    "name": "ExpenseTracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49882997",
+    "_collection_link": "https://go.postman.co/collection/49882997-b7fd09e8-4c6f-4f99-a3c8-33dcf22c8030?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"snow\",\r\n    \"email\":\"snow@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/users/register",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"snow@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/users/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCategory",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Emi\",\r\n    \"type\":\"expense\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/categories/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCategories",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/categories/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCategory",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE3ZmMxZWE3Y2Q4MDRjY2Y1NTc1ZGIiLCJpYXQiOjE3Nzk5NTY5MzEsImV4cCI6MTc4MDA0MzMzMX0.KpzcgEKxek6Mu_80c5-QmKQ_VRnReDwQw6YekFIf1q0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Updated Food\",\r\n    \"type\":\"expense\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/categories/:id",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6a18415c96bf6a1b586bf98c"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCategory",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE3ZmMxZWE3Y2Q4MDRjY2Y1NTc1ZGIiLCJpYXQiOjE3Nzk5NTY5MzEsImV4cCI6MTc4MDA0MzMzMX0.KpzcgEKxek6Mu_80c5-QmKQ_VRnReDwQw6YekFIf1q0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/categories/:id",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6a18415c96bf6a1b586bf98c"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTransaction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"amount\":2500,\r\n    \"type\":\"expense\",\r\n    \"category\":\"6a197172235c14590f0d6cab\",\r\n    \"note\":\"Emi for iPhone 17\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/transactions/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "transactions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTransaction",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/transactions/?month=2025-05&category=6a197145235c14590f0d6ca9",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "transactions",
+            ""
+          ],
+          "query": [
+            {
+              "key": "month",
+              "value": "2025-05"
+            },
+            {
+              "key": "category",
+              "value": "6a197145235c14590f0d6ca9"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateTransaction",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"amount\":5000,\r\n    \"type\":\"expense\",\r\n    \"category\":\"6a197172235c14590f0d6cab\",\r\n    \"note\":\"Buying medicines\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/transactions/:id",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "transactions",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6a197245235c14590f0d6cac"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTransaction",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/transactions/:id",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "transactions",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6a197245235c14590f0d6cac"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTransactionSummary",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/v1/summary/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "summary",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCategorySummary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE5NzBlNTIzNWMxNDU5MGYwZDZjYTciLCJpYXQiOjE3ODAwNTIyMjcsImV4cCI6MTc4MDEzODYyN30.CelDW2bSYckTudU7SmQ_vmwMVljOvhiIa7KaFIboKtE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:3000/api/v1/summary/categories",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "summary",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
