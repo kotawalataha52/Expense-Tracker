@@ -135,7 +135,7 @@ const getTransactionSummary = asyncHandler(async (req, res) => {
         const endDate = new Date(startDate);
         endDate.setMonth(endDate.getMonth() + 1);
 
-        matchStage.createdAt = {
+        matchStage.date = {
             $gte: startDate,
             $lt: endDate
         };
@@ -190,7 +190,7 @@ const getCategorySummary = asyncHandler(async (req, res) => {
         const endDate = new Date(startDate);
         endDate.setMonth(endDate.getMonth() + 1);
 
-        matchStage.createdAt = {
+        matchStage.date = {
             $gte: startDate,
             $lt: endDate
         };

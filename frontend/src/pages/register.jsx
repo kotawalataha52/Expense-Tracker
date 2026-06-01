@@ -56,15 +56,7 @@ export default function Register() {
     }
   };
 
-  const passwordStrength = (pwd) => {
-    if (!pwd) return { level: 0, label: "" };
-    if (pwd.length < 6) return { level: 1, label: "Weak" };
-    if (pwd.length < 10) return { level: 2, label: "Fair" };
-    if (/[A-Z]/.test(pwd) && /[0-9]/.test(pwd)) return { level: 4, label: "Strong" };
-    return { level: 3, label: "Good" };
-  };
 
-  const strength = passwordStrength(formData.password);
 
   return (
     <div className={styles.authWrapper}>
@@ -179,17 +171,7 @@ export default function Register() {
                   )}
                 </button>
               </div>
-              {formData.password && (
-                <div className={styles.strengthBar}>
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className={`${styles.strengthSegment} ${i <= strength.level ? styles[`strength${strength.level}`] : ""}`}
-                    />
-                  ))}
-                  <span className={styles.strengthLabel}>{strength.label}</span>
-                </div>
-              )}
+
             </div>
 
             <div className={styles.fieldGroup}>

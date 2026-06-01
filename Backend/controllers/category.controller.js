@@ -31,10 +31,24 @@ const createCategory = asyncHandler(async (req,res)=>{
 });
 
 const getCategories = asyncHandler(async (req,res) => {
-    const categories = await Category.find({user:req.user._id});
-    // if(!categories){
-    //     return [];
-    // }
+    let categories = await Category.find({user:req.user._id});
+    if (!categories || categories.length === 0) {
+        const defaultCategories = [
+            { name: "Salary", type: "income", user: req.user._id },
+            { name: "Freelance", type: "income", user: req.user._id },
+            { name: "Investments", type: "income", user: req.user._id },
+            { name: "Others", type: "income", user: req.user._id },
+            { name: "Groceries", type: "expense", user: req.user._id },
+            { name: "Rent", type: "expense", user: req.user._id },
+            { name: "Utilities", type: "expense", user: req.user._id },
+            { name: "Dining Out", type: "expense", user: req.user._id },
+            { name: "Entertainment", type: "expense", user: req.user._id },
+            { name: "Transport", type: "expense", user: req.user._id },
+            { name: "Shopping", type: "expense", user: req.user._id },
+            { name: "Miscellaneous", type: "expense", user: req.user._id },
+        ];
+        categories = await Category.insertMany(defaultCategories);
+    }
     return res
     .status(200)
     .json(new ApiResponse(200,
